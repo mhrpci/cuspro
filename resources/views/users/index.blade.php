@@ -34,13 +34,7 @@
                                     <td>{{ $user->email }}</td>
                                     <td>
                                         <div class="btn-group">
-                                            <a class="btn btn-info btn-sm" href="{{ route('users.show',$user->id) }}"><i class="fas fa-eye"></i>&nbsp;Preview</a> &nbsp;
                                                 <a class="btn btn-primary btn-sm" href="{{ route('users.edit',$user->id) }}"><i class="fas fa-edit"></i>&nbsp;Edit</a>&nbsp;
-                                                <form action="{{ route('users.destroy', $user->id) }}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this user?')"><i class="fas fa-trash"></i>&nbsp;Delete</button>
-                                                </form>
                                         </div>
                                     </td>
                                 </tr>

@@ -1,0 +1,9 @@
+[build]
+  command = "composer install && php artisan optimize && php artisan migrate"
+  publish = "public"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.php"
+  status = 200
+  force = true

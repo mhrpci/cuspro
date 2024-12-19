@@ -1,12 +1,11 @@
 @extends('adminlte::page')
 
-@section('title', 'Analytics Dashboard')
+@section('title', 'Dashboard')
 
 @section('content_header')
     <div class="d-flex justify-content-between align-items-center">
         <div>
-            <h1 class="m-0 text-dark">Analytics Dashboard</h1>
-            <small class="text-muted">Real-time system overview</small>
+            <h1 class="m-0 text-dark">Dashboard</h1>
         </div>
     </div>
 @endsection
@@ -20,21 +19,13 @@
                 <div class="inner">
                     <h3>{{number_format($userCount)}}</h3>
                     <p>Total Users</p>
-                    <div class="progress" style="height: 3px;">
-                        <div class="progress-bar" style="width: 70%"></div>
-                    </div>
                 </div>
                 <div class="icon">
                     <i class="fas fa-users"></i>
                 </div>
-                <a href="#" class="small-box-footer">
+                <a href="{{route('users.index')}}" class="small-box-footer">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
-                <div class="ribbon-wrapper">
-                    <div class="ribbon bg-primary">
-                        +15%
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -43,21 +34,13 @@
                 <div class="inner">
                     <h3>{{number_format($areaCount)}}</h3>
                     <p>Active Areas</p>
-                    <div class="progress" style="height: 3px;">
-                        <div class="progress-bar" style="width: 85%"></div>
-                    </div>
                 </div>
                 <div class="icon">
                     <i class="fas fa-map-marked-alt"></i>
                 </div>
-                <a href="#" class="small-box-footer">
+                <a href="{{route('areas.index')}}" class="small-box-footer">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
-                <div class="ribbon-wrapper">
-                    <div class="ribbon bg-warning">
-                        +8%
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -66,21 +49,13 @@
                 <div class="inner">
                     <h3>{{number_format($hospitalCount)}}</h3>
                     <p>Registered Hospitals</p>
-                    <div class="progress" style="height: 3px;">
-                        <div class="progress-bar" style="width: 60%"></div>
-                    </div>
                 </div>
                 <div class="icon">
                     <i class="fas fa-hospital"></i>
                 </div>
-                <a href="#" class="small-box-footer">
+                <a href="{{route('hospitals.index')}}" class="small-box-footer">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
-                <div class="ribbon-wrapper">
-                    <div class="ribbon bg-danger">
-                        +12%
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -89,21 +64,13 @@
                 <div class="inner">
                     <h3>{{number_format($customerCount)}}</h3>
                     <p>Total Customers</p>
-                    <div class="progress" style="height: 3px;">
-                        <div class="progress-bar" style="width: 75%"></div>
-                    </div>
                 </div>
                 <div class="icon">
                     <i class="fas fa-user-tie"></i>
                 </div>
-                <a href="#" class="small-box-footer">
+                <a href="{{route('customers.index')}}" class="small-box-footer">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
-                <div class="ribbon-wrapper">
-                    <div class="ribbon bg-success">
-                        +20%
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -143,61 +110,6 @@
                 </div>
                 <div class="card-body">
                     <canvas id="pieChart" style="height: 300px;"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- PHSS Section -->
-    <div class="row">
-        <div class="col-12">
-            <div class="card elevation-3">
-                <div class="card-header border-0">
-                    <h3 class="card-title">PHSS Overview</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-sm btn-primary">
-                            <i class="fas fa-download mr-1"></i> Generate Report
-                        </button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <canvas id="phssChart" style="height: 250px;"></canvas>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="info-box bg-gradient-success">
-                                <span class="info-box-icon"><i class="fas fa-user-md"></i></span>
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Total PHSS</span>
-                                    <span class="info-box-number">{{number_format($phssCount)}}</span>
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 85%"></div>
-                                    </div>
-                                    <span class="progress-description">
-                                        85% Active Status
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="mt-4">
-                                <h5>Quick Statistics</h5>
-                                <ul class="list-unstyled">
-                                    <li class="mb-2">
-                                        <i class="fas fa-check-circle text-success mr-2"></i>
-                                        Active PHSS: {{number_format($phssCount * 0.85)}}
-                                    </li>
-                                    <li class="mb-2">
-                                        <i class="fas fa-clock text-warning mr-2"></i>
-                                        Pending: {{number_format($phssCount * 0.10)}}
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-times-circle text-danger mr-2"></i>
-                                        Inactive: {{number_format($phssCount * 0.05)}}
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
